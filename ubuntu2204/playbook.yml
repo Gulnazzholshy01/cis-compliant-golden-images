@@ -20,7 +20,7 @@
 ###############################################################################
 
 
- - hosts: localhost
+ - hosts: all
    vars:
       var_sudo_logfile: !!str /var/log/sudo.log
       var_sudo_timestamp_timeout: !!str 15
@@ -31,7 +31,6 @@
       var_password_pam_minlen: !!str 14
       var_password_pam_ocredit: !!str -1
       var_password_pam_ucredit: !!str -1
-      var_accounts_user_umask: !!str 027
       var_accounts_user_umask: !!str 027
       sysctl_net_ipv6_conf_all_accept_ra_value: !!str 0
       sysctl_net_ipv6_conf_all_accept_redirects_value: !!str 0

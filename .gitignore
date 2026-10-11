@@ -1,0 +1,13 @@
+# Scan output
+*.html
+arf*.xml
+*-results*.xml
+
+# Packer
+packer_cache/
+crash.log
+*.auto.pkrvars.hcl
+
+# OS / editor
+.DS_Store
+.vscode/

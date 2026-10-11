@@ -1,0 +1,5 @@
+---
+# The generated playbooks use the sysctl and mount modules from ansible.posix.
+collections:
+  - name: ansible.posix
+  - name: community.general

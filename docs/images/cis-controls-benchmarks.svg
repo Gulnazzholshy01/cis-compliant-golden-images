@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 360" width="1010" height="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">CIS Controls, CIS Benchmarks and SCAP tools</title>
+  <desc id="desc">CIS Controls say what to do, CIS Benchmarks say how to do it per platform, and SCAP tools such as USG and OpenSCAP check and remediate automatically.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    .panel { fill: #f6f8fa; stroke: #d0d7de; }
+    .chip { fill: #ffffff; stroke: #8c959f; }
+    .hl { fill: #ddf4ff; stroke: #54aeff; }
+    .h { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .t { fill: #1f2328; font-size: 12px; font-weight: 600; }
+    .s { fill: #59636e; font-size: 12px; }
+    .c { fill: #1f2328; font-size: 11px; }
+    .title { fill: #1f2328; font-size: 18px; font-weight: 600; }
+    .lbl { fill: #0969da; font-size: 11px; font-weight: 600; }
+    .arrow { stroke: #0969da; stroke-width: 1.8; fill: none; }
+    .ah { fill: #0969da; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .panel { fill: #161b22; stroke: #30363d; }
+      .chip { fill: #0d1117; stroke: #484f58; }
+      .hl { fill: #0c2d6b; stroke: #1f6feb; }
+      .h, .t, .c, .title { fill: #e6edf3; }
+      .s { fill: #8b949e; }
+      .lbl { fill: #4493f8; }
+      .arrow { stroke: #4493f8; }
+      .ah { fill: #4493f8; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0,0 L10,5 L0,10 z"/></marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1010" height="360" rx="12"/>
+  <text class="title" x="20" y="34">How CIS Controls, Benchmarks and SCAP tools fit together</text>
+
+  <!-- CIS Controls -->
+  <rect class="panel" x="20" y="56" width="250" height="284" rx="10"/>
+  <text class="h" x="36" y="86">CIS Controls</text>
+  <text class="s" x="36" y="106">what to do · platform-agnostic</text>
+  <rect class="hl" x="36" y="124" width="218" height="66" rx="6"/>
+  <text class="t" x="48" y="145">Control 4</text>
+  <text class="c" x="48" y="162">Secure Configuration of</text>
+  <text class="c" x="48" y="178">Enterprise Assets and Software</text>
+  <rect class="chip" x="36" y="200" width="218" height="36" rx="6"/>
+  <text class="c" x="48" y="222">Control 8 · Audit Log Management</text>
+  <rect class="chip" x="36" y="246" width="218" height="36" rx="6"/>
+  <text class="c" x="48" y="268">… 18 controls in total (v8)</text>
+
+  <!-- CIS Benchmarks -->
+  <rect class="panel" x="380" y="56" width="250" height="284" rx="10"/>
+  <text class="h" x="396" y="86">CIS Benchmarks</text>
+  <text class="s" x="396" y="106">how to do it · per platform</text>
+  <rect class="hl" x="396" y="124" width="218" height="36" rx="6"/>
+  <text class="c" x="408" y="146">CIS Ubuntu Linux 22.04 LTS</text>
+  <rect class="hl" x="396" y="170" width="218" height="36" rx="6"/>
+  <text class="c" x="408" y="192">CIS Red Hat Enterprise Linux 8</text>
+  <rect class="chip" x="396" y="216" width="218" height="36" rx="6"/>
+  <text class="c" x="408" y="238">… 100+ platforms and products</text>
+  <text class="t" x="396" y="284">Profiles</text>
+  <text class="c" x="396" y="302">Level 1 · Level 2</text>
+  <text class="c" x="396" y="318">× Server · Workstation</text>
+
+  <!-- SCAP tools -->
+  <rect class="panel" x="740" y="56" width="250" height="284" rx="10"/>
+  <text class="h" x="756" y="86">SCAP content &amp; tools</text>
+  <text class="s" x="756" y="106">check and fix automatically</text>
+  <rect class="hl" x="756" y="124" width="218" height="36" rx="6"/>
+  <text class="c" x="768" y="146">USG → Ubuntu 22.04</text>
+  <rect class="hl" x="756" y="170" width="218" height="36" rx="6"/>
+  <text class="c" x="768" y="192">OpenSCAP + SSG → RHEL / CentOS</text>
+  <rect class="chip" x="756" y="216" width="218" height="36" rx="6"/>
+  <text class="c" x="768" y="238">Outputs: report · Bash · Ansible</text>
+  <text class="t" x="756" y="284">In this repo</text>
+  <text class="c" x="756" y="302">The Ansible output is baked</text>
+  <text class="c" x="756" y="318">into golden images with Packer.</text>
+
+  <!-- Relations -->
+  <text class="lbl" x="325" y="190" text-anchor="middle">implemented by</text>
+  <path class="arrow" d="M276 200 H374" marker-end="url(#a)"/>
+  <text class="lbl" x="685" y="190" text-anchor="middle">automated by</text>
+  <path class="arrow" d="M636 200 H734" marker-end="url(#a)"/>
+</svg>

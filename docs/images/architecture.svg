@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 556" width="990" height="556" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">CIS golden image pipeline</title>
+  <desc id="desc">Four phases: audit a reference server, generate an Ansible playbook, bake it into an AMI with Packer, then verify and deploy.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    .panel { fill: #f6f8fa; stroke: #d0d7de; }
+    .box { fill: #ffffff; stroke: #8c959f; }
+    .gold { fill: #fff8c5; stroke: #d4a72c; }
+    .chip { fill: #ddf4ff; stroke: #54aeff; }
+    .h { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .t { fill: #1f2328; font-size: 13px; font-weight: 600; }
+    .s { fill: #59636e; font-size: 11px; }
+    .c { fill: #0a3069; font-size: 11px; }
+    .title { fill: #1f2328; font-size: 18px; font-weight: 600; }
+    .arrow { stroke: #0969da; stroke-width: 1.6; fill: none; }
+    .fb { stroke: #8c959f; stroke-width: 1.4; fill: none; stroke-dasharray: 5 4; }
+    .ah { fill: #0969da; }
+    .ahm { fill: #8c959f; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .panel { fill: #161b22; stroke: #30363d; }
+      .box { fill: #0d1117; stroke: #484f58; }
+      .gold { fill: #2e2a1a; stroke: #bb8009; }
+      .chip { fill: #0c2d6b; stroke: #1f6feb; }
+      .h, .t, .title { fill: #e6edf3; }
+      .s { fill: #8b949e; }
+      .c { fill: #cae8ff; }
+      .arrow { stroke: #4493f8; }
+      .ah { fill: #4493f8; }
+      .fb { stroke: #6e7681; }
+      .ahm { fill: #6e7681; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0,0 L10,5 L0,10 z"/></marker>
+    <marker id="m" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ahm" d="M0,0 L10,5 L0,10 z"/></marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="990" height="556" rx="12"/>
+  <text class="title" x="20" y="34">CIS golden image pipeline</text>
+
+  <!-- Panel 1: Audit -->
+  <rect class="panel" x="20" y="56" width="219" height="420" rx="10"/>
+  <text class="h" x="36" y="84">1 · Audit</text>
+  <text class="s" x="36" y="102">on a reference server</text>
+  <rect class="box" x="34" y="120" width="191" height="72" rx="8"/>
+  <text class="t" x="46" y="148">Reference server</text>
+  <text class="s" x="46" y="168">Ubuntu 22.04 · CentOS 8</text>
+  <rect class="box" x="34" y="248" width="191" height="72" rx="8"/>
+  <text class="t" x="46" y="276">Scan</text>
+  <text class="s" x="46" y="296">usg audit · oscap xccdf eval</text>
+  <rect class="box" x="34" y="376" width="191" height="72" rx="8"/>
+  <text class="t" x="46" y="404">Scan results</text>
+  <text class="s" x="46" y="424">arf.xml + report.html</text>
+  <path class="arrow" d="M129.5 192 V246" marker-end="url(#a)"/>
+  <path class="arrow" d="M129.5 320 V374" marker-end="url(#a)"/>
+
+  <!-- Panel 2: Generate -->
+  <rect class="panel" x="263" y="56" width="219" height="420" rx="10"/>
+  <text class="h" x="279" y="84">2 · Generate</text>
+  <text class="s" x="279" y="102">remediation as code</text>
+  <rect class="box" x="277" y="120" width="191" height="72" rx="8"/>
+  <text class="t" x="289" y="148">Generate fix</text>
+  <text class="s" x="289" y="168">oscap --fix-type ansible</text>
+  <rect class="box" x="277" y="248" width="191" height="72" rx="8"/>
+  <text class="t" x="289" y="276">playbook.yml</text>
+  <text class="s" x="289" y="296">one task per failed rule</text>
+  <rect class="box" x="277" y="376" width="191" height="72" rx="8"/>
+  <text class="t" x="289" y="404">This repository</text>
+  <text class="s" x="289" y="424">ubuntu2204/ · centos8/</text>
+  <path class="arrow" d="M372.5 192 V246" marker-end="url(#a)"/>
+  <path class="arrow" d="M372.5 320 V374" marker-end="url(#a)"/>
+
+  <!-- Panel 3: Bake -->
+  <rect class="panel" x="506" y="56" width="219" height="420" rx="10"/>
+  <text class="h" x="522" y="84">3 · Bake</text>
+  <text class="s" x="522" y="102">Packer on AWS</text>
+  <rect class="box" x="520" y="120" width="191" height="64" rx="8"/>
+  <text class="t" x="532" y="146">packer build</text>
+  <text class="s" x="532" y="166">*-cis.pkr.hcl</text>
+  <rect class="box" x="520" y="214" width="191" height="150" rx="8"/>
+  <text class="t" x="532" y="238">Build instance</text>
+  <text class="s" x="532" y="256">latest official base AMI</text>
+  <rect class="chip" x="534" y="268" width="163" height="26" rx="6"/>
+  <text class="c" x="544" y="285">shell · prepare packages</text>
+  <rect class="chip" x="534" y="300" width="163" height="26" rx="6"/>
+  <text class="c" x="544" y="317">ansible · playbook.yml</text>
+  <rect class="chip" x="534" y="332" width="163" height="26" rx="6"/>
+  <text class="c" x="544" y="349">shell · generalise image</text>
+  <rect class="gold" x="520" y="394" width="191" height="64" rx="8"/>
+  <text class="t" x="532" y="420">Golden AMI</text>
+  <text class="s" x="532" y="440">tagged with OS + benchmark</text>
+  <path class="arrow" d="M615.5 184 V212" marker-end="url(#a)"/>
+  <path class="arrow" d="M615.5 364 V392" marker-end="url(#a)"/>
+
+  <!-- Panel 4: Verify & deploy -->
+  <rect class="panel" x="749" y="56" width="219" height="420" rx="10"/>
+  <text class="h" x="765" y="84">4 · Verify &amp; deploy</text>
+  <text class="s" x="765" y="102">before rollout</text>
+  <rect class="box" x="763" y="120" width="191" height="72" rx="8"/>
+  <text class="t" x="775" y="148">Test instance</text>
+  <text class="s" x="775" y="168">launched from golden AMI</text>
+  <rect class="box" x="763" y="248" width="191" height="72" rx="8"/>
+  <text class="t" x="775" y="276">Re-scan</text>
+  <text class="s" x="775" y="296">scan.sh → compliance score</text>
+  <rect class="box" x="763" y="376" width="191" height="72" rx="8"/>
+  <text class="t" x="775" y="404">Production fleet</text>
+  <text class="s" x="775" y="424">every server starts hardened</text>
+  <path class="arrow" d="M858.5 192 V246" marker-end="url(#a)"/>
+  <path class="arrow" d="M858.5 320 V374" marker-end="url(#a)"/>
+
+  <!-- Hand-offs between phases -->
+  <path class="arrow" d="M225 412 H251 V156 H275" marker-end="url(#a)"/>
+  <path class="arrow" d="M468 412 H494 V152 H518" marker-end="url(#a)"/>
+  <path class="arrow" d="M711 426 H737 V156 H761" marker-end="url(#a)"/>
+
+  <!-- Feedback loop -->
+  <path class="fb" d="M858.5 476 V508 H129.5 V478" marker-end="url(#m)"/>
+  <text class="s" x="494" y="532" text-anchor="middle">Regenerate the playbook when the benchmark version or the base image changes</text>
+</svg>
